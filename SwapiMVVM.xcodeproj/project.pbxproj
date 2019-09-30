@@ -29,6 +29,20 @@
 		B0563818233D7B4000BCD913 /* ApiRequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0563817233D7B4000BCD913 /* ApiRequestMethod.swift */; };
 		B056381A233D7B9D00BCD913 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0563819233D7B9D00BCD913 /* ApiResponse.swift */; };
 		B056381C233D7BEF00BCD913 /* ApiCookie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B056381B233D7BEF00BCD913 /* ApiCookie.swift */; };
+		B0C026922342A30A00638295 /* SwapiResponseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C026912342A30A00638295 /* SwapiResponseList.swift */; };
+		B0C026942342A4E200638295 /* SwapiListItemPeople.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C026932342A4E200638295 /* SwapiListItemPeople.swift */; };
+		B0C026962342A67600638295 /* SwapiGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C026952342A67600638295 /* SwapiGender.swift */; };
+		B0C026A62342AE5B00638295 /* SwapiListItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C026A52342AE5B00638295 /* SwapiListItemProtocol.swift */; };
+		B0C026AC2342B13700638295 /* PeopleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C026A82342B13700638295 /* PeopleFactory.swift */; };
+		B0C026AD2342B13700638295 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C026A92342B13700638295 /* PeopleViewController.swift */; };
+		B0C026AE2342B13700638295 /* PeopleFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C026AA2342B13700638295 /* PeopleFlowController.swift */; };
+		B0C026AF2342B13700638295 /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C026AB2342B13700638295 /* PeopleViewModel.swift */; };
+		B0C026B62342B28A00638295 /* AlertFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C026B22342B28A00638295 /* AlertFactory.swift */; };
+		B0C026B72342B28A00638295 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C026B32342B28A00638295 /* AlertViewController.swift */; };
+		B0C026C12342B71300638295 /* AlertFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C026C02342B71300638295 /* AlertFlowController.swift */; };
+		B0C026C92342B83100638295 /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C026C82342B83100638295 /* FlowController.swift */; };
+		B0C026CB2342BB6D00638295 /* PeopleItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C026CA2342BB6D00638295 /* PeopleItemCell.swift */; };
+		B0C026CD2342C70B00638295 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C026CC2342C70B00638295 /* String+Extensions.swift */; };
 		B0FFBE6B233D682400DDDFA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0FFBE6A233D682400DDDFA4 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +70,20 @@
 		B0563817233D7B4000BCD913 /* ApiRequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestMethod.swift; sourceTree = "<group>"; };
 		B0563819233D7B9D00BCD913 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		B056381B233D7BEF00BCD913 /* ApiCookie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCookie.swift; sourceTree = "<group>"; };
+		B0C026912342A30A00638295 /* SwapiResponseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapiResponseList.swift; sourceTree = "<group>"; };
+		B0C026932342A4E200638295 /* SwapiListItemPeople.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapiListItemPeople.swift; sourceTree = "<group>"; };
+		B0C026952342A67600638295 /* SwapiGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapiGender.swift; sourceTree = "<group>"; };
+		B0C026A52342AE5B00638295 /* SwapiListItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapiListItemProtocol.swift; sourceTree = "<group>"; };
+		B0C026A82342B13700638295 /* PeopleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleFactory.swift; sourceTree = "<group>"; };
+		B0C026A92342B13700638295 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		B0C026AA2342B13700638295 /* PeopleFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleFlowController.swift; sourceTree = "<group>"; };
+		B0C026AB2342B13700638295 /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
+		B0C026B22342B28A00638295 /* AlertFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFactory.swift; sourceTree = "<group>"; };
+		B0C026B32342B28A00638295 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		B0C026C02342B71300638295 /* AlertFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFlowController.swift; sourceTree = "<group>"; };
+		B0C026C82342B83100638295 /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
+		B0C026CA2342BB6D00638295 /* PeopleItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleItemCell.swift; sourceTree = "<group>"; };
+		B0C026CC2342C70B00638295 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		B0FFBE5E233D682400DDDFA4 /* Swapi MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swapi MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FFBE6A233D682400DDDFA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +110,10 @@
 		B04A7697233D86D7002B1CCC /* SwapiService */ = {
 			isa = PBXGroup;
 			children = (
+				B0C026952342A67600638295 /* SwapiGender.swift */,
+				B0C026932342A4E200638295 /* SwapiListItemPeople.swift */,
+				B0C026A52342AE5B00638295 /* SwapiListItemProtocol.swift */,
+				B0C026912342A30A00638295 /* SwapiResponseList.swift */,
 				B04A769A233D89FC002B1CCC /* SwapiResponseRoot.swift */,
 				B04A7698233D870B002B1CCC /* SwapiService.swift */,
 			);
@@ -163,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				B0563805233D75CE00BCD913 /* IndexPath+Extension.swift */,
+				B0C026CC2342C70B00638295 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -170,6 +203,8 @@
 		B0563807233D76B500BCD913 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B0C026B02342B26A00638295 /* Alert */,
+				B0C026A72342B12200638295 /* People */,
 				B0563808233D76CC00BCD913 /* MainScreen */,
 			);
 			path = Modules;
@@ -184,6 +219,44 @@
 				B0563810233D77B100BCD913 /* MainScreenViewModel.swift */,
 			);
 			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		B0C026A72342B12200638295 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				B0C026A82342B13700638295 /* PeopleFactory.swift */,
+				B0C026AA2342B13700638295 /* PeopleFlowController.swift */,
+				B0C026CA2342BB6D00638295 /* PeopleItemCell.swift */,
+				B0C026A92342B13700638295 /* PeopleViewController.swift */,
+				B0C026AB2342B13700638295 /* PeopleViewModel.swift */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		B0C026B02342B26A00638295 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				B0C026B22342B28A00638295 /* AlertFactory.swift */,
+				B0C026C02342B71300638295 /* AlertFlowController.swift */,
+				B0C026B32342B28A00638295 /* AlertViewController.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		B0C026C62342B81600638295 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B0C026C72342B81C00638295 /* FlowControllers */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B0C026C72342B81C00638295 /* FlowControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B0C026C82342B83100638295 /* FlowController.swift */,
+			);
+			path = FlowControllers;
 			sourceTree = "<group>";
 		};
 		B0FFBE55233D682400DDDFA4 = {
@@ -206,6 +279,7 @@
 		B0FFBE60233D682400DDDFA4 /* SwapiMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				B0C026C62342B81600638295 /* Common */,
 				B05637E5233D69A500BCD913 /* Application */,
 				B0563807233D76B500BCD913 /* Modules */,
 				B05637E6233D69B600BCD913 /* Resources */,
@@ -310,23 +384,37 @@
 				B0563811233D77B100BCD913 /* MainScreenFactory.swift in Sources */,
 				B03E28E6233D7F3500A7D997 /* ApiError.swift in Sources */,
 				B05637F1233D6DA100BCD913 /* AppDelegate.swift in Sources */,
+				B0C026922342A30A00638295 /* SwapiResponseList.swift in Sources */,
 				B0563806233D75CE00BCD913 /* IndexPath+Extension.swift in Sources */,
 				B056381A233D7B9D00BCD913 /* ApiResponse.swift in Sources */,
+				B0C026942342A4E200638295 /* SwapiListItemPeople.swift in Sources */,
+				B0C026C12342B71300638295 /* AlertFlowController.swift in Sources */,
 				B05637EE233D6B4D00BCD913 /* ServiceListener.swift in Sources */,
+				B0C026AE2342B13700638295 /* PeopleFlowController.swift in Sources */,
+				B0C026CB2342BB6D00638295 /* PeopleItemCell.swift in Sources */,
 				B03E28E8233D7F9600A7D997 /* ApiSession+Extensions.swift in Sources */,
+				B0C026CD2342C70B00638295 /* String+Extensions.swift in Sources */,
+				B0C026C92342B83100638295 /* FlowController.swift in Sources */,
 				B0563801233D740000BCD913 /* UIView+Layout.swift in Sources */,
 				B0563814233D77B100BCD913 /* MainScreenViewModel.swift in Sources */,
 				B0563812233D77B100BCD913 /* MainScreenViewController.swift in Sources */,
+				B0C026B72342B28A00638295 /* AlertViewController.swift in Sources */,
+				B0C026B62342B28A00638295 /* AlertFactory.swift in Sources */,
 				B04A769B233D89FC002B1CCC /* SwapiResponseRoot.swift in Sources */,
 				B05637FB233D725300BCD913 /* Log.swift in Sources */,
 				B05637F7233D710B00BCD913 /* Localizable.swift in Sources */,
 				B0563803233D74A600BCD913 /* UIStackView+Layout.swift in Sources */,
 				B0563816233D7A6B00BCD913 /* ApiSession.swift in Sources */,
 				B0563818233D7B4000BCD913 /* ApiRequestMethod.swift in Sources */,
+				B0C026962342A67600638295 /* SwapiGender.swift in Sources */,
+				B0C026AD2342B13700638295 /* PeopleViewController.swift in Sources */,
 				B0563813233D77B100BCD913 /* MainScreenFlowController.swift in Sources */,
 				B056381C233D7BEF00BCD913 /* ApiCookie.swift in Sources */,
 				B05637EA233D6AC900BCD913 /* DependencyManager.swift in Sources */,
 				B04A7699233D870B002B1CCC /* SwapiService.swift in Sources */,
+				B0C026AF2342B13700638295 /* PeopleViewModel.swift in Sources */,
+				B0C026AC2342B13700638295 /* PeopleFactory.swift in Sources */,
+				B0C026A62342AE5B00638295 /* SwapiListItemProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

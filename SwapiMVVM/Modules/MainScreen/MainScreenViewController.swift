@@ -33,19 +33,19 @@ class MainScreenViewController: UIViewController, MainScreenViewModelDelegate, U
         
         // View
         self.view.backgroundColor = .white
-        
+
         // Table view
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
         self.tableView.alwaysBounceVertical = true
-        self.view.addSubview(self.tableView) { addedSubview in
-            addedSubview.fill()
+        self.view.addSubview(self.tableView) { subview in
+            subview.fill()
         }
-        
+
         // Register cells
         self.tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "CellId")
-        
+
         // Refresh control
         self.refreshControl.addTarget(self, action: #selector(refreshed(_:)), for: .valueChanged)
         self.tableView.refreshControl = self.refreshControl
@@ -84,6 +84,12 @@ class MainScreenViewController: UIViewController, MainScreenViewModelDelegate, U
         cell.selectionStyle = item.enabled ? .gray : .none
         
         return cell
+    }
+    
+    // MARK: - UITableViewDelegate methods
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.viewModel.selected(index: indexPath.row)
     }
 
     // MARK: - MainScreenViewModelDelegate methods (notifications from view model)

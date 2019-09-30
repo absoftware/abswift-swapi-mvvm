@@ -1,8 +1,8 @@
 //
-//  MainScreenFlowController.swift
+//  PeopleFlowController.swift
 //  SwapiMVVM
 //
-//  Created by Ariel Bogdziewicz on 27/09/2019.
+//  Created by Ariel Bogdziewicz on 30/09/2019.
 //  Copyright © 2019 Ariel Bogdziewicz. All rights reserved.
 //
 //  MVVM module
@@ -11,17 +11,17 @@
 
 import UIKit
 
-class MainScreenFlowController: FlowController {
+class PeopleFlowController: FlowController {
     
     // MARK: - Dependencies
 
     weak var navigationController: UINavigationController!
-    weak var viewController: MainScreenViewController!
+    weak var viewController: PeopleViewController!
     let dependencyManager: DependencyManager
 
     // MARK: - Initializers
 
-    init(navigationController: UINavigationController, viewController: MainScreenViewController, dependencyManager: DependencyManager) {
+    init(navigationController: UINavigationController, viewController: PeopleViewController, dependencyManager: DependencyManager) {
         self.navigationController = navigationController
         self.viewController = viewController
         self.dependencyManager = dependencyManager
@@ -33,10 +33,5 @@ class MainScreenFlowController: FlowController {
 
     // MARK: - Actions
 
-    func showPeople(url: String) {
-        PeopleFactory.pushIn(
-            navigationController: self.navigationController,
-            url: url,
-            dependencyManager: self.dependencyManager)
-    }
+    // Navigation actions here...
 }

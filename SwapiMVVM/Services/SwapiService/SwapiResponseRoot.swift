@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct SwapiResponseRoot: Decodable {
+/// Main response for SWAPI.
+/// Url: https://swapi.co/api/
+struct SwapiResponseRoot: Codable {
     
     var people: String
     var planets: String

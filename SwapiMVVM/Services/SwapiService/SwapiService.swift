@@ -40,4 +40,22 @@ class SwapiService {
             completionOnMainThread: self.completionOnMainThread,
             completionHandler: completionHandler)
     }
+    
+    func getList<T>(type: T.Type, url: String, search: String, completionHandler: @escaping (_ result: Result<ApiDecodedResponse<SwapiResponseList<T>>, ApiError>) -> Void) {
+        
+        var finalUrl = url
+        if search.trim.count > 0, let search = search.trim.addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed) {
+            finalUrl = "\(finalUrl)?search=\(search)"
+        }
+        
+        self.session.requestJson(
+            method: .get,
+            url: finalUrl,
+            query: nil,
+            dataType: SwapiResponseList<T>.self,
+            retry: SwapiService.retryCount,
+            timeout: SwapiService.timeout,
+            completionOnMainThread: self.completionOnMainThread,
+            completionHandler: completionHandler)
+    }
 }

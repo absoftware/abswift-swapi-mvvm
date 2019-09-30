@@ -11,7 +11,7 @@
 
 import UIKit
 
-class MainScreenFactory: NSObject {
+class MainScreenFactory {
 
     static func rootIn(navigationController: UINavigationController, dependencyManager: DependencyManager) {
 

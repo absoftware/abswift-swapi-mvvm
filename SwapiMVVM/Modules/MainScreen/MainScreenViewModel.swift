@@ -20,7 +20,7 @@ class MainScreenViewModel {
     
     // MARK: - Types
     
-    enum ItemType {
+    enum ItemIdentifier {
         case people
         case planets
         case films
@@ -30,7 +30,7 @@ class MainScreenViewModel {
     }
     
     struct Item {
-        var itemType: ItemType
+        var identifier: ItemIdentifier
         var title: String
         var subtitle: String?
         var url: String
@@ -60,9 +60,24 @@ class MainScreenViewModel {
         self.swapi = swapi
     }
     
-    // MARK: - Actions
+    // MARK: - Actions (from view controller)
+    
+    func selected(index: Int) {
+        let item = self.items[index]
+        switch item.identifier {
+        case .people:
+            self.flowController.showPeople(url: item.url)
+        default:
+            // TODO: Implement modules for other identifiers.
+            break
+        }
+    }
     
     func reload() {
+        guard !self.isLoading else {
+            return
+        }
+        
         self.isLoading = true
         self.swapi.getRoot() { result in
             
@@ -74,37 +89,37 @@ class MainScreenViewModel {
                 let data = response.data
                 self.items = [
                     Item(
-                        itemType: .people,
+                        identifier: .people,
                         title: localizedString("People"),
                         subtitle: nil,
                         url: data.people,
                         enabled: true),
                     Item(
-                        itemType: .planets,
+                        identifier: .planets,
                         title: localizedString("Planets"),
                         subtitle: localizedString("TODO"),
                         url: data.planets,
                         enabled: false),
                     Item(
-                        itemType: .films,
+                        identifier: .films,
                         title: localizedString("Films"),
                         subtitle: localizedString("TODO"),
                         url: data.films,
                         enabled: false),
                     Item(
-                        itemType: .species,
+                        identifier: .species,
                         title: localizedString("Species"),
                         subtitle: localizedString("TODO"),
                         url: data.species,
                         enabled: false),
                      Item(
-                        itemType: .vehicles,
+                        identifier: .vehicles,
                         title: localizedString("Vehicles"),
                         subtitle: localizedString("TODO"),
                         url: data.vehicles,
                         enabled: false),
                      Item(
-                        itemType: .starships,
+                        identifier: .starships,
                         title: localizedString("Starships"),
                         subtitle: localizedString("TODO"),
                         url: data.starships,
@@ -113,11 +128,10 @@ class MainScreenViewModel {
                 
                 // Notify view
                 self.delegate?.viewModelUpdated(self)
-                
+
             case .failure(let apiError):
-                
-                // TODO: Implement alerts
-                break
+                self.flowController.show(apiError: apiError)
+
             }
         }
     }
