@@ -11,6 +11,8 @@ Example of architecture MVVM-FC (flow controllers) in iOS project based on Star 
     * [Tools/](Library/Tools/) - tools for localized strings and logs. Any other diagnostic code and debugging helpers.
     * [UIKit+Layout/](Library/UIKit+Layout/) - extensions for UIKit supporting easy creation of constraints for views in clean source code. It's used in almost every view and view controller.
 * [SwapiMVVM/](SwapiMVVM/) - source code of our application with MVVM modules and business logic.
+    * [Application/](SwapiMVVM/Application/) - folder with delegate of the application and configuration files.
+    * [Common/](SwapiMVVM/Common/) - code which can be reused in MVVM modules but it's related strictly to this application.
     * [Modules/](SwapiMVVM/Modules/) - MVVM modules. Most of modules consist of view model, view controller, flow controller and factory. There can be located also custom views or data structures for specific modules.
     * [Resources/](SwapiMVVM/Resources/) - assets and localized strings.
     * [Services/](SwapiMVVM/Services/) - services which can be used in view models.
