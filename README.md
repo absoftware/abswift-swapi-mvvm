@@ -56,8 +56,9 @@ Dependencies for initializer:
 
 * Flow controller
 * Model's structures and classes
-* Services like `SwapiService` to make network requests or interfaces for local databases like `CoreData` or `UserDefaults`.
+* Services like `SwapiService` to make network requests or interfaces for local databases like `CoreData` or `UserDefaults`
 * Use cases - reusable code for view models with similar dependencies as view models
+* Use cases and services are delivered by dependency manager in factories.
 
 Notifications for view controller:
 
@@ -75,3 +76,30 @@ Input (user actions):
 * View model exposes functions to handle user actions.
 * Wrong names for actions are like `searchButtonClicked(text:)` or `cellSelected(index:)`.
 * Good names for actions are like `search(text:)` and `selectedItem(index:)`.
+
+### Flow controller
+
+Flow controller can be used only from view model. It handles navigation actions.
+
+Dependencies:
+
+* View controller from current module
+* Navigation controller (optional)
+* Parent controller (optional)
+* Tab bar controller (optional)
+* Other view controllers (optional)
+* Dependency manager that it could be passed to the next modules
+
+**All references to view controllers must be `weak` to not create memory leaks.**
+
+Flow controller implements actions like:
+
+* `show(apiError:)`
+* `showAlert`
+* `showAnotherModule`
+* `goToNextController` (specific controller)
+* `goBackToPreviousController`
+* `showImagePicker`
+* etc.
+
+These methods are allowed to use factories and they can be called from view model because only view model owns flow controller.
