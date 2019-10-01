@@ -17,3 +17,62 @@ Example of architecture MVVM-FC (flow controllers) in iOS project based on Star 
     * [Resources/](SwapiMVVM/Resources/) - assets and localized strings.
     * [Services/](SwapiMVVM/Services/) - services which can be used in view models.
         * [SwapiService/](SwapiMVVM/Services/SwapiService/) - implemented specification of SWAPI using `ApiSession` class. It delivers request methods and decoded responses.
+
+## Basic rules of MVVM-FC
+
+Almost every module consists of view controller, view model, flow controller and factory. They can be optional in some specific cases like [Alert](SwapiMVVM/Modules/Alert/) module.
+
+### Factory
+
+Factory is set of static methods which create whole module. Naming convention is following:
+
+* `Factory.create` creates view controller.
+* `Factory.pushIn` creates and pushes view controller into navigation controller.
+* `Factory.showIn` creates and displays view controller as modal controller.
+* `Factory.rootIn` creates and sets view controller as root view controller in navigation controller.
+
+You may create more methods like these described here depending on needs. So usually one factory contains just two methods like `Factory.create` and `Factory.pushIn` for screen which will be used only as page in navigation controller.
+
+Example of simple factory is file [MainScreenFactory.swift](SwapiMVVM/Modules/MainScreen/MainScreenFactory.swift):
+```
+import UIKit
+
+class MainScreenFactory {
+
+    static func rootIn(navigationController: UINavigationController, dependencyManager: DependencyManager) {
+
+        // View controller
+        let viewController = MainScreenFactory.create(
+            navigationController: navigationController,
+            dependencyManager: dependencyManager)
+
+        // Root controller
+        navigationController.viewControllers = [viewController]
+    }
+
+    static func create(navigationController: UINavigationController, dependencyManager: DependencyManager) -> MainScreenViewController {
+
+        // View controller
+        let viewController = MainScreenViewController()
+        viewController.title = localizedString("Star Wars API")
+
+        // Flow controller
+        let flowController = MainScreenFlowController(
+            navigationController: navigationController,
+            viewController: viewController,
+            dependencyManager: dependencyManager)
+
+        // View model
+        let viewModel = MainScreenViewModel(
+            flowController: flowController,
+            swapi: dependencyManager.swapi)
+        viewModel.delegate = viewController
+        viewController.viewModel = viewModel
+
+        // Return controller
+        return viewController
+    }
+}
+```
+
+Factories may be used there where you need to create MVVM modules. First screen is created in application delegate. Other factories should be used in flow controllers only.
