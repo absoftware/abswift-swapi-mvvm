@@ -152,7 +152,7 @@ class PeopleViewController: UIViewController, PeopleViewModelDelegate, UITableVi
     func recreateSearchTimer() {
         self.invalidateSearchTimer()
         self.searchTimer = Timer.scheduledTimer(
-            withTimeInterval: 1.5,
+            withTimeInterval: 1.2,
             repeats: false,
             block: { timer in
                 
@@ -170,7 +170,7 @@ class PeopleViewController: UIViewController, PeopleViewModelDelegate, UITableVi
         if let cancelButton = searchBar.value(forKey: "cancelButton") as? UIButton {
             cancelButton.setTitle(localizedString("Cancel"), for: .normal)
         }
-        
+
         // Show cancel button for editing.
         searchBar.setShowsCancelButton(true, animated: true)
         return true
