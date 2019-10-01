@@ -22,6 +22,8 @@ Example of architecture MVVM-FC (flow controllers) in iOS project based on Star 
 
 Almost every module consists of view controller, view model, flow controller and factory. They can be optional in some specific cases like [Alert](SwapiMVVM/Modules/Alert/) module.
 
+Example of simple module is [MainScreen](SwapiMVVM/Modules/MainScreen/) module.
+
 ### Factory
 
 Factory is set of static methods which create whole module. Naming convention is following:
@@ -33,46 +35,43 @@ Factory is set of static methods which create whole module. Naming convention is
 
 You may create more methods like these described here depending on needs. So usually one factory contains just two methods like `Factory.create` and `Factory.pushIn` for screen which will be used only as page in navigation controller.
 
-Example of simple factory is file [MainScreenFactory.swift](SwapiMVVM/Modules/MainScreen/MainScreenFactory.swift):
-```
-import UIKit
-
-class MainScreenFactory {
-
-    static func rootIn(navigationController: UINavigationController, dependencyManager: DependencyManager) {
-
-        // View controller
-        let viewController = MainScreenFactory.create(
-            navigationController: navigationController,
-            dependencyManager: dependencyManager)
-
-        // Root controller
-        navigationController.viewControllers = [viewController]
-    }
-
-    static func create(navigationController: UINavigationController, dependencyManager: DependencyManager) -> MainScreenViewController {
-
-        // View controller
-        let viewController = MainScreenViewController()
-        viewController.title = localizedString("Star Wars API")
-
-        // Flow controller
-        let flowController = MainScreenFlowController(
-            navigationController: navigationController,
-            viewController: viewController,
-            dependencyManager: dependencyManager)
-
-        // View model
-        let viewModel = MainScreenViewModel(
-            flowController: flowController,
-            swapi: dependencyManager.swapi)
-        viewModel.delegate = viewController
-        viewController.viewModel = viewModel
-
-        // Return controller
-        return viewController
-    }
-}
-```
-
 Factories may be used there where you need to create MVVM modules. First screen is created in application delegate. Other factories should be used in flow controllers only.
+
+All factories should take `DependencyManager` as input argument. It delivers dependencies to view models like `SwapiService`.
+
+### View controller
+
+* View controller owns view model.
+* View controller implements view model's delegate or closures.
+* View controller informs view model about user actions without making decisions.
+* View controller listens to changes from view model.
+* View controller reads view model's properties and displays content.
+* View controller must implement closures from view model with `[weak self]` to not create memory leaks.
+
+### View model
+
+**View model prepares data for view controller and handles user actions.** However view model doesn't organize specific views. View model doesn't know view layer. So it knows nothing about views, text fields, labels, first responders, buttons, scroll areas, constraints, frames, table views, cells, etc. **So `import UIKit` is forbidden in view model.**
+
+Dependencies for initializer:
+
+* Flow controller
+* Model's structures and classes
+* Services like `SwapiService` to make network requests or interfaces for local databases like `CoreData` or `UserDefaults`.
+* Use cases - reusable code for view models with similar dependencies as view models
+
+Notifications for view controller:
+
+* View model exposes `weak` delegate to not create memory leaks.
+* View model may expose closures as alternative for delegate.
+
+Output (exposed properties for view controller):
+
+* View model exposes readonly properties for view controller like `items`, `isLoading` or `searchText`. They are marked very often as `private(set)` properties.
+* Wrong names for view model's properties are like `showSpinner`, `searchFieldText` or `footerLabelText`.
+* Good names for view model's properties are like `isLoading`, `searchText` or `summaryText`.
+
+Input (user actions):
+
+* View model exposes functions to handle user actions.
+* Wrong names for actions are like `searchButtonClicked(text:)` or `cellSelected(index:)`.
+* Good names for actions are like `search(text:)` and `selectedItem(index:)`.
