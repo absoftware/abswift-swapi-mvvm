@@ -14,7 +14,7 @@ class SwapiService {
     
     static let retryCount: Int = 3
     static let timeout: TimeInterval = 10.0
-    static let apiUrl = "https://swapi.co/api/"
+    static let apiUrl = "https://swapi.dev/api/"
     
     let session: ApiSession
     let completionOnMainThread: Bool
