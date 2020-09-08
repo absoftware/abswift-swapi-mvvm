@@ -76,7 +76,7 @@ extension HTTPURLResponse {
     func consoleDescription(data: Data?) -> String {
         let code = self.statusCode
         let headers = self.allHeaderFields.consoleDescription()
-        let body = data != nil ? String(data: data!, encoding: .utf8) ?? "" : ""
+        let body = data?.prettyJson ?? data?.utf8 ?? ""
         return "HTTP \(code)\n\(headers)\n\n\(body)"
     }
 }

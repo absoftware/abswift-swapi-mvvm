@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0025B692507766B00BF95C4 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0025B682507766B00BF95C4 /* Data+Extensions.swift */; };
 		B03E28E6233D7F3500A7D997 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03E28E4233D7ECA00A7D997 /* ApiError.swift */; };
 		B03E28E8233D7F9600A7D997 /* ApiSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03E28E7233D7F9600A7D997 /* ApiSession+Extensions.swift */; };
 		B04A7699233D870B002B1CCC /* SwapiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04A7698233D870B002B1CCC /* SwapiService.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B0025B682507766B00BF95C4 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		B03E28E4233D7ECA00A7D997 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		B03E28E7233D7F9600A7D997 /* ApiSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApiSession+Extensions.swift"; sourceTree = "<group>"; };
 		B04A7698233D870B002B1CCC /* SwapiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapiService.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 		B05637FF233D73BE00BCD913 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B0025B682507766B00BF95C4 /* Data+Extensions.swift */,
 				B0563805233D75CE00BCD913 /* IndexPath+Extension.swift */,
 				B0C026CC2342C70B00638295 /* String+Extensions.swift */,
 			);
@@ -410,6 +413,7 @@
 				B0C026AD2342B13700638295 /* PeopleViewController.swift in Sources */,
 				B0563813233D77B100BCD913 /* MainScreenFlowController.swift in Sources */,
 				B056381C233D7BEF00BCD913 /* ApiCookie.swift in Sources */,
+				B0025B692507766B00BF95C4 /* Data+Extensions.swift in Sources */,
 				B05637EA233D6AC900BCD913 /* DependencyManager.swift in Sources */,
 				B04A7699233D870B002B1CCC /* SwapiService.swift in Sources */,
 				B0C026AF2342B13700638295 /* PeopleViewModel.swift in Sources */,
